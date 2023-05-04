@@ -38,7 +38,10 @@ export class App extends Component {
     return (
       <>
         <Section title="Please Leave feedback">
-          <FeedbackOptions options={options} feedBack={this.onClickButton} />
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={this.onClickButton}
+          />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() === 0 ? (
@@ -49,7 +52,7 @@ export class App extends Component {
               neutral={neutral}
               bad={bad}
               total={total}
-              positive={positive}
+              positivePercentage={positive}
             />
           )}
         </Section>
